@@ -1,0 +1,18 @@
+{
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.3"
+    }
+  },
+  "routes": [
+    { "src": "/admin", "dest": "/api/admin.php" },
+    { "src": "/admin/(.*)", "dest": "/api/admin.php" },
+    { "src": "/login", "dest": "/api/index.php?page=login" },
+    { "src": "/register", "dest": "/api/index.php?page=register" },
+    { "src": "/r/(.*)", "dest": "/api/index.php?qr=$1" },
+    { "src": "/qr/(.*)", "dest": "/api/index.php?qr=$1" },
+    { "src": "/scan/(.*)", "dest": "/api/index.php?qr=$1" },
+    { "src": "/favicon.svg", "dest": "/favicon.svg" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
+  ]
+}
